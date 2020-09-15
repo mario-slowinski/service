@@ -1,0 +1,9 @@
+service_rpms:
+- openssh-server
+
+service_firewalld:
+  zones:
+  - name: public
+    services:
+    - ssh
+    ports: []
