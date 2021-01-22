@@ -1,6 +1,6 @@
 - name: "Allow services in firewall"
   tags: service-firewall-services
-  firewalld:
+  ansible.posix.firewalld:
     service: "{{ item[1] }}"
     state: enabled
     permanent: yes
@@ -10,7 +10,7 @@
 
 - name: "Allow ports in firewall"
   tags: service-firewall-ports
-  firewalld:
+  ansible.posix.firewalld:
     port: "{{ item[1] }}/tcp"
     state: enabled
     permanent: yes
