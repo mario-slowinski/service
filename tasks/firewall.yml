@@ -7,6 +7,8 @@
     immediate: yes
     zone: "{{ item[0]['name'] }}"
   loop: "{{ service_firewalld['zones'] | subelements('services') }}"
+  loop_control:
+    label: "{{ item[1] }} zone={{ item[0]['name'] }}"
 
 - name: "Allow ports in firewall"
   tags: service-firewall-ports
@@ -17,4 +19,6 @@
     immediate: yes
     zone: "{{ item[0]['name'] }}"
   loop: "{{ service_firewalld['zones'] | subelements('ports') }}"
+  loop_control:
+    label: "{{ item[1] }}/tcp zone={{ item[0]['name'] }}"
 
