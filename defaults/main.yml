@@ -1,4 +1,4 @@
-service_rpms:
+service_pkgs:
 - openssh-server
 
 service_firewalld:

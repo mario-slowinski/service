@@ -1,8 +1,6 @@
-- name: "Install required software"
-  tags: service-install
-  include_tasks: install.yml
-
-- name: "Configure service"
-  tags: service-firewall
-  include_tasks: firewall.yml
+- name: "Configure firewall"
+  tags:
+  - service
+  - service-firewall
+  import_tasks: firewall.yml
 

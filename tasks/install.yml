@@ -1,4 +1,0 @@
-- name: "dnf install {{ service_rpms | join(', ') }}"
-  dnf:
-    state: latest
-    name: "{{ service_rpms }}"
