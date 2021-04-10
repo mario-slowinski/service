@@ -48,5 +48,4 @@ galaxy_info:
 
 dependencies:
 - role: software
-  vars:
-    software_pkgs: "[{'name': {{ service_pkgs }},'state':'latest'}]"
+  software_pkgs: "{{ service_pkgs }}"
