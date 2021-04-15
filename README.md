@@ -1,4 +1,4 @@
-mario_slowinski.service
+service
 =========
 
 Install and allow in firewall systemctl service.
@@ -28,10 +28,17 @@ Role Variables
 Dependencies
 ------------
 
-* [mario_slowinski.software](https://galaxy.ansible.com/mario_slowinski/software)
+* [software](https://galaxy.ansible.com/mario_slowinski/software)
 
 Example Playbook
 ----------------
+
+* `requirements.yml`
+
+  ```yaml
+  - name: service
+    src: mario_slowinski.service
+  ```
 
 * playbook usage
 
@@ -39,23 +46,23 @@ Example Playbook
   - hosts: servers
     gather_facts: yes  # to determine ansible_os_family
     roles:
-    - role: mario_slowinski.service
+      - role: service
   ```
 
 * role dependency usage
 
   ```yaml
   - dependencies:
-    roles:
-    - role: mario_slowinski.service
-      service_pkgs: "{{ role_pkgs }}"
-      service_firewalld: "{{ role_firewalld }}"
+      - name: service
+        src: mario_slowinski.service
+        service_pkgs: "{{ role_pkgs }}"
+        service_firewalld: "{{ role_firewalld }}"
   ```
 
 License
 -------
 
-[GPL-2.0-or-later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Author Information
 ------------------

@@ -11,9 +11,6 @@ galaxy_info:
     - name: GenericLinux
       versions:
         - any
-    - name: Ubuntu
-      versions:
-        - all
 
   galaxy_tags:
     - service
