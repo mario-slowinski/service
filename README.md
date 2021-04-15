@@ -1,4 +1,4 @@
-service
+mario_slowinski.service
 =========
 
 Install and allow in firewall systemctl service.
@@ -28,7 +28,7 @@ Role Variables
 Dependencies
 ------------
 
-* [software](https://galaxy.ansible.com/mario_slowinski/ansible_role_software)
+* [mario_slowinski.software](https://galaxy.ansible.com/mario_slowinski/software)
 
 Example Playbook
 ----------------
