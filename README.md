@@ -21,7 +21,7 @@ Role Variables
   service_firewalld:    # firewalld settings
     zones: []           # list of firewalld zones
       - name:
-        services: []     # list of services to allow in firewalld
+        services: []    # list of services to allow in firewalld
         ports: []       # list of ports to allow in firewalld
   ```
 
@@ -37,7 +37,7 @@ Example Playbook
 
   ```yaml
   - name: service
-    src: mario_slowinski.service
+    src: https://github.com/mario-slowinski/service
   ```
 
 * playbook usage
@@ -54,7 +54,7 @@ Example Playbook
   ```yaml
   - dependencies:
       - name: service
-        src: mario_slowinski.service
+        src: https://github.com/mario-slowinski/service
         service_pkgs: "{{ role_pkgs }}"
         service_firewalld: "{{ role_firewalld }}"
   ```
