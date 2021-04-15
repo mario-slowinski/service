@@ -39,7 +39,7 @@ Example Playbook
   - hosts: servers
     gather_facts: yes  # to determine ansible_os_family
     roles:
-    - role: service
+    - role: mario_slowinski.service
   ```
 
 * role dependency usage
@@ -47,7 +47,7 @@ Example Playbook
   ```yaml
   - dependencies:
     roles:
-    - role: service
+    - role: mario_slowinski.service
       service_pkgs: "{{ role_pkgs }}"
       service_firewalld: "{{ role_firewalld }}"
   ```
