@@ -1,6 +1,7 @@
 ---
 service_pkgs:
-  - openssh-server
+  name:
+    - openssh-server
 
 service_firewalld:
   zones:
