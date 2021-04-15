@@ -20,5 +20,6 @@ galaxy_info:
     - systemctl
 
 dependencies:
-  - role: mario_slowinski.software
+  - src: mario_slowinski.software
+    name: software
     software_pkgs: "{{ service_pkgs }}"
