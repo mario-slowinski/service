@@ -1,9 +1,10 @@
+---
 service_pkgs:
-- openssh-server
+  - openssh-server
 
 service_firewalld:
   zones:
-  - name: public
-    services:
-    - ssh
-    ports: []
+    - name: public
+      services:
+        - ssh
+      ports: []

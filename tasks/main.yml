@@ -1,6 +1,6 @@
+---
 - name: "Configure firewall"
   tags:
-  - service
-  - service-firewall
+    - service
+    - service-firewall
   import_tasks: firewall.yml
-

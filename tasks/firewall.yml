@@ -1,10 +1,11 @@
+---
 - name: "Allow services in firewall"
   tags: service-firewall-services
   ansible.posix.firewalld:
     service: "{{ item[1] }}"
     state: enabled
-    permanent: yes
-    immediate: yes
+    permanent: true
+    immediate: true
     zone: "{{ item[0]['name'] }}"
   loop: "{{ service_firewalld['zones'] | subelements('services') }}"
   loop_control:
@@ -15,10 +16,9 @@
   ansible.posix.firewalld:
     port: "{{ item[1] }}/tcp"
     state: enabled
-    permanent: yes
-    immediate: yes
+    permanent: true
+    immediate: true
     zone: "{{ item[0]['name'] }}"
   loop: "{{ service_firewalld['zones'] | subelements('ports') }}"
   loop_control:
     label: "{{ item[1] }}/tcp zone={{ item[0]['name'] }}"
-
