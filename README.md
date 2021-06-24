@@ -1,5 +1,5 @@
 service
-=========
+=======
 
 Install and allow in firewall systemctl service.
 
@@ -15,6 +15,8 @@ Role Variables
 * defaults
 
   ```yaml
+  service_name: ""      # name of systemd service to start/enable
+
   service_pkgs: []      # list of packages required by the service
   - name: []            # list of packages names to install
 
@@ -29,6 +31,12 @@ Dependencies
 ------------
 
 * [software](https://galaxy.ansible.com/mario_slowinski/software)
+
+Tags
+----
+
+* service.firewall
+* service.state
 
 Example Playbook
 ----------------
@@ -47,16 +55,6 @@ Example Playbook
     gather_facts: yes  # to determine ansible_os_family
     roles:
       - role: service
-  ```
-
-* role dependency usage
-
-  ```yaml
-  - dependencies:
-      - name: service
-        src: https://github.com/mario-slowinski/service
-        service_pkgs: "{{ role_pkgs }}"
-        service_firewalld: "{{ role_firewalld }}"
   ```
 
 License
