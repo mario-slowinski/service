@@ -2,5 +2,11 @@
 - name: "Configure firewall"
   tags:
     - service
-    - service-firewall
+    - service.firewall
   import_tasks: firewall.yml
+
+- name: "Update service state"
+  tags:
+    - service
+    - service.state
+  import_tasks: state.yml
