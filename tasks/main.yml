@@ -4,6 +4,7 @@
     - service
     - service.firewall
   import_tasks: firewall.yml
+  when: ansible_os_family != 'Solaris'
 
 - name: "Update service state"
   tags:
