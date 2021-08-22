@@ -3,11 +3,11 @@
   tags:
     - service
     - service.firewall
-  import_tasks: firewall.yml
+  import_tasks: firewall.yaml
   when: service_firewalld | length > 0
 
 - name: "Update service state"
   tags:
     - service
     - service.state
-  import_tasks: state.yml
+  import_tasks: state.yaml
