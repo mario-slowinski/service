@@ -1,0 +1,2 @@
+---
+firewalld_python: "{{ lookup('vars', ansible_os_family+'_firewalld_python') }}"
